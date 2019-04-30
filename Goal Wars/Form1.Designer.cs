@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pboGeodes = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pboGeodes)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pboGeodes
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(77, 49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 96);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pboGeodes.Location = new System.Drawing.Point(77, 49);
+            this.pboGeodes.Name = "pboGeodes";
+            this.pboGeodes.Size = new System.Drawing.Size(63, 96);
+            this.pboGeodes.TabIndex = 0;
+            this.pboGeodes.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pboGeodes);
             this.Name = "Form1";
             this.Text = "Goal Wars";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboGeodes)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pboGeodes;
     }
 }
 
