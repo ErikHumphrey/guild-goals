@@ -124,10 +124,9 @@
             // 
             // lblCurrencyCount1
             // 
-            this.lblCurrencyCount1.AutoSize = true;
-            this.lblCurrencyCount1.Location = new System.Drawing.Point(399, 20);
+            this.lblCurrencyCount1.Location = new System.Drawing.Point(316, 20);
             this.lblCurrencyCount1.Name = "lblCurrencyCount1";
-            this.lblCurrencyCount1.Size = new System.Drawing.Size(30, 13);
+            this.lblCurrencyCount1.Size = new System.Drawing.Size(113, 13);
             this.lblCurrencyCount1.TabIndex = 5;
             this.lblCurrencyCount1.Text = "0 / 0";
             this.lblCurrencyCount1.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -170,10 +169,9 @@
             // 
             // lblCurrencyCount2
             // 
-            this.lblCurrencyCount2.AutoSize = true;
-            this.lblCurrencyCount2.Location = new System.Drawing.Point(399, 20);
+            this.lblCurrencyCount2.Location = new System.Drawing.Point(313, 20);
             this.lblCurrencyCount2.Name = "lblCurrencyCount2";
-            this.lblCurrencyCount2.Size = new System.Drawing.Size(30, 13);
+            this.lblCurrencyCount2.Size = new System.Drawing.Size(116, 13);
             this.lblCurrencyCount2.TabIndex = 5;
             this.lblCurrencyCount2.Text = "0 / 0";
             this.lblCurrencyCount2.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -218,10 +216,9 @@
             // 
             // lblCurrencyCount3
             // 
-            this.lblCurrencyCount3.AutoSize = true;
-            this.lblCurrencyCount3.Location = new System.Drawing.Point(399, 20);
+            this.lblCurrencyCount3.Location = new System.Drawing.Point(310, 20);
             this.lblCurrencyCount3.Name = "lblCurrencyCount3";
-            this.lblCurrencyCount3.Size = new System.Drawing.Size(30, 13);
+            this.lblCurrencyCount3.Size = new System.Drawing.Size(119, 13);
             this.lblCurrencyCount3.TabIndex = 5;
             this.lblCurrencyCount3.Text = "0 / 0";
             this.lblCurrencyCount3.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -266,10 +263,9 @@
             // 
             // lblCurrencyCount4
             // 
-            this.lblCurrencyCount4.AutoSize = true;
-            this.lblCurrencyCount4.Location = new System.Drawing.Point(399, 20);
+            this.lblCurrencyCount4.Location = new System.Drawing.Point(307, 20);
             this.lblCurrencyCount4.Name = "lblCurrencyCount4";
-            this.lblCurrencyCount4.Size = new System.Drawing.Size(30, 13);
+            this.lblCurrencyCount4.Size = new System.Drawing.Size(122, 13);
             this.lblCurrencyCount4.TabIndex = 5;
             this.lblCurrencyCount4.Text = "0 / 0";
             this.lblCurrencyCount4.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -314,10 +310,9 @@
             // 
             // lblCurrencyCount5
             // 
-            this.lblCurrencyCount5.AutoSize = true;
-            this.lblCurrencyCount5.Location = new System.Drawing.Point(399, 20);
+            this.lblCurrencyCount5.Location = new System.Drawing.Point(307, 20);
             this.lblCurrencyCount5.Name = "lblCurrencyCount5";
-            this.lblCurrencyCount5.Size = new System.Drawing.Size(30, 13);
+            this.lblCurrencyCount5.Size = new System.Drawing.Size(122, 13);
             this.lblCurrencyCount5.TabIndex = 5;
             this.lblCurrencyCount5.Text = "0 / 0";
             this.lblCurrencyCount5.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -362,10 +357,9 @@
             // 
             // lblCurrencyCount6
             // 
-            this.lblCurrencyCount6.AutoSize = true;
-            this.lblCurrencyCount6.Location = new System.Drawing.Point(399, 20);
+            this.lblCurrencyCount6.Location = new System.Drawing.Point(304, 20);
             this.lblCurrencyCount6.Name = "lblCurrencyCount6";
-            this.lblCurrencyCount6.Size = new System.Drawing.Size(30, 13);
+            this.lblCurrencyCount6.Size = new System.Drawing.Size(125, 13);
             this.lblCurrencyCount6.TabIndex = 5;
             this.lblCurrencyCount6.Text = "0 / 0";
             this.lblCurrencyCount6.TextAlign = System.Drawing.ContentAlignment.TopRight;
