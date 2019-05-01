@@ -51,7 +51,7 @@ namespace Goal_Wars
 
         private void FetchAccountInfo()
         {
-            String request = new WebClient().DownloadString(API_URL + "/account/wallet" + "?access_token=" + txtApiKey.Text);
+            String request = new WebClient().DownloadString(API_URL + "/account/wallet" + "?access_token=" + apiKey);
             dynamic stuff = JsonConvert.DeserializeObject(request);
             count = stuff[21].value;
             prgCurrency1.Maximum = count + 500;
