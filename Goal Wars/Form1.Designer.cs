@@ -130,6 +130,7 @@
             this.lblCurrencyCount1.Size = new System.Drawing.Size(30, 13);
             this.lblCurrencyCount1.TabIndex = 5;
             this.lblCurrencyCount1.Text = "0 / 0";
+            this.lblCurrencyCount1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // tmrCounter
             // 
@@ -175,6 +176,7 @@
             this.lblCurrencyCount2.Size = new System.Drawing.Size(30, 13);
             this.lblCurrencyCount2.TabIndex = 5;
             this.lblCurrencyCount2.Text = "0 / 0";
+            this.lblCurrencyCount2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pboCurrencyIcon2
             // 
@@ -222,6 +224,7 @@
             this.lblCurrencyCount3.Size = new System.Drawing.Size(30, 13);
             this.lblCurrencyCount3.TabIndex = 5;
             this.lblCurrencyCount3.Text = "0 / 0";
+            this.lblCurrencyCount3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pboCurrencyIcon3
             // 
@@ -269,6 +272,7 @@
             this.lblCurrencyCount4.Size = new System.Drawing.Size(30, 13);
             this.lblCurrencyCount4.TabIndex = 5;
             this.lblCurrencyCount4.Text = "0 / 0";
+            this.lblCurrencyCount4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pboCurrencyIcon4
             // 
@@ -316,6 +320,7 @@
             this.lblCurrencyCount5.Size = new System.Drawing.Size(30, 13);
             this.lblCurrencyCount5.TabIndex = 5;
             this.lblCurrencyCount5.Text = "0 / 0";
+            this.lblCurrencyCount5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pboCurrencyIcon5
             // 
@@ -363,6 +368,7 @@
             this.lblCurrencyCount6.Size = new System.Drawing.Size(30, 13);
             this.lblCurrencyCount6.TabIndex = 5;
             this.lblCurrencyCount6.Text = "0 / 0";
+            this.lblCurrencyCount6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // pboCurrencyIcon6
             // 
