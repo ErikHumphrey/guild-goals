@@ -24,7 +24,7 @@ namespace Guild_Goals
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            this.txtApiKey.GotFocus += new EventHandler(TxtApiKey_Focus);
+            txtApiKey.GotFocus += new EventHandler(TxtApiKey_Focus);
 
             FetchIcons();
         }
