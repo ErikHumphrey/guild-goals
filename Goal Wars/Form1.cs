@@ -19,6 +19,7 @@ namespace Goal_Wars
         int count = 0;
         int fakeCount = 0;
         const string API_URL = "https://api.guildwars2.com/v2";
+        const int CURRENCY_OFFSET = -4; // TODO: Find why this is necessary
         string apiKey;
 
         public frmMain()
@@ -53,6 +54,11 @@ namespace Goal_Wars
         {
             String request = new WebClient().DownloadString(API_URL + "/account/wallet" + "?access_token=" + apiKey);
             dynamic stuff = JsonConvert.DeserializeObject(request);
+
+            Label[] currencyName = { lblCurrencyName1, lblCurrencyName2, lblCurrencyName3, lblCurrencyName4, lblCurrencyName5, lblCurrencyName6 };
+            Label[] currencyCounter = { lblCurrencyCount1, lblCurrencyCount2, lblCurrencyCount3, lblCurrencyCount4, lblCurrencyCount5, lblCurrencyCount6 };
+            ProgressBar[] currencyProgress = { prgCurrency1, prgCurrency2, prgCurrency3, prgCurrency4, prgCurrency5, prgCurrency6 };
+
             count = stuff[21].value;
             prgCurrency1.Maximum = count + 500;
             tmrCounter.Start();
@@ -60,10 +66,10 @@ namespace Goal_Wars
 
         private void FetchIcons()
         {
-            PictureBox[] pbo = { pboCurrencyIcon1, pboCurrencyIcon2, pboCurrencyIcon3, pboCurrencyIcon4, pboCurrencyIcon5, pboCurrencyIcon6 };
+            PictureBox[] currencyIcon = { pboCurrencyIcon1, pboCurrencyIcon2, pboCurrencyIcon3, pboCurrencyIcon4, pboCurrencyIcon5, pboCurrencyIcon6 };
             int[] currencyID = { 27, 25, 5, 6, 19, 16 };
 
-            for (int i = 0; i < pbo.Length; i++)
+            for (int i = 0; i < currencyIcon.Length; i++)
             {
                 string json = new WebClient().DownloadString(API_URL + "/currencies/" + currencyID[i]);
                 dynamic netObj = JsonConvert.DeserializeObject(json);
@@ -73,7 +79,7 @@ namespace Goal_Wars
                 using (var response = request.GetResponse())
                 using (var stream = response.GetResponseStream())
                 {
-                    pbo[i].Image = Bitmap.FromStream(stream);
+                    currencyIcon[i].Image = Bitmap.FromStream(stream);
                 }
             }
         }
