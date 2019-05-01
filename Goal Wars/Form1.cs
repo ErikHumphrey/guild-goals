@@ -34,7 +34,7 @@ namespace Goal_Wars
             Console.WriteLine(imageURL);
             var request = WebRequest.Create(imageURL);
 
-            fetchIcons();
+            FetchIcons();
 
             lblCurrencyName1.Text = stuff.name + "s";
 
