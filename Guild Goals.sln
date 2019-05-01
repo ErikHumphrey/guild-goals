@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goal Wars", "Goal Wars\Goal Wars.csproj", "{D2865406-6C38-418E-A1F5-6C9DA5F23255}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guild Goals", "Goal Wars\Guild Goals.csproj", "{D2865406-6C38-418E-A1F5-6C9DA5F23255}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

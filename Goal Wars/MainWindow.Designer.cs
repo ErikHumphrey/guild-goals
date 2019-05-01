@@ -1,4 +1,4 @@
-﻿namespace Goal_Wars
+﻿namespace Guild_Goals
 {
     partial class frmMain
     {
@@ -108,8 +108,8 @@
             this.txtApiKey.Location = new System.Drawing.Point(10, 8);
             this.txtApiKey.Name = "txtApiKey";
             this.txtApiKey.Size = new System.Drawing.Size(445, 20);
-            this.txtApiKey.TabIndex = 3;
-            this.txtApiKey.Text = "AE50CD92-68E3-E948-95AE-C02650A06B2290DAA18C-63CB-48F6-BF38-113FE430B3E7";
+            this.txtApiKey.TabIndex = 5;
+            this.txtApiKey.Text = "Enter your Guild Wars 2 API key";
             this.txtApiKey.TextChanged += new System.EventHandler(this.TxtApiKey_TextChanged);
             // 
             // btnRefresh

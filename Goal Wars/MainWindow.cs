@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 // TODO: Change the last four currencies to items (Obsidian Shards, Karka Shells, Passion Flowers, and Stabilizing Matrices)
 
-namespace Goal_Wars
+namespace Guild_Goals
 {
     public partial class frmMain : Form
     {
@@ -24,6 +24,8 @@ namespace Goal_Wars
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            this.txtApiKey.GotFocus += new EventHandler(TxtApiKey_Focus);
+
             FetchIcons();
         }
 
@@ -125,6 +127,11 @@ namespace Goal_Wars
                     currencyProgress[i].Value += 17;
                 }
             }
+        }
+
+        private void TxtApiKey_Focus(Object sender, EventArgs e)
+        {
+            txtApiKey.Text = ""; // Clear TextBox on focus
         }
     }
 }
