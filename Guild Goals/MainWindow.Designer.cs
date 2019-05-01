@@ -387,7 +387,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 624);
+            this.ClientSize = new System.Drawing.Size(647, 624);
             this.Controls.Add(this.pnlCurrency6);
             this.Controls.Add(this.pnlCurrency5);
             this.Controls.Add(this.pnlCurrency4);
