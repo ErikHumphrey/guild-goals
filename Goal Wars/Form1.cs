@@ -29,25 +29,22 @@ namespace Goal_Wars
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            string json = new WebClient().DownloadString(API_URL + "/currencies/25");
-            dynamic netObj = JsonConvert.DeserializeObject(json);
-            string imageURL = netObj.icon;
-            Console.WriteLine(imageURL);
-            var request = WebRequest.Create(imageURL);
-
             FetchIcons();
 
-            lblCurrencyName1.Text = netObj.name + "s";
-
-            for (int i = 1; i < 47; i++)
-            {
-                if (i != 8 && i != 17 && i != 21)
-                {
-                    json = new WebClient().DownloadString(API_URL + "/currencies/" + i);
-                    netObj = JsonConvert.DeserializeObject(json);
-                    Console.WriteLine(i.ToString() + " " + netObj.name);
-                }
-            }
+            //string json = new WebClient().DownloadString(API_URL + "/currencies/25");
+            //dynamic netObj = JsonConvert.DeserializeObject(json);
+            //string imageURL = netObj.icon;
+            //Console.WriteLine(imageURL);
+            //var request = WebRequest.Create(imageURL);
+            //for (int i = 1; i < 47; i++)
+            //{
+            //    if (i != 8 && i != 17 && i != 21)
+            //    {
+            //        json = new WebClient().DownloadString(API_URL + "/currencies/" + i);
+            //        netObj = JsonConvert.DeserializeObject(json);
+            //        Console.WriteLine(i.ToString() + " " + netObj.name);
+            //    }
+            //}
         }
 
         private void FetchAccountInfo()
@@ -125,7 +122,5 @@ namespace Goal_Wars
             if (fakeCount >= count)
                 tmrCounter.Stop();
         }
-
-
     }
 }
