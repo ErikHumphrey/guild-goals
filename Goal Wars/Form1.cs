@@ -17,33 +17,14 @@ namespace Goal_Wars
     public partial class frmMain : Form
     {
         const string API_URL = "https://api.guildwars2.com/v2";
-        const int CURRENCY_OFFSET = -4; // TODO: Find why this is necessary
         string apiKey;
         int[] currencyCount = new int[6];
 
-        public frmMain()
-        {
-            InitializeComponent();
-        }
+        public frmMain() => InitializeComponent();
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
             FetchIcons();
-
-            //string json = new WebClient().DownloadString(API_URL + "/currencies/25");
-            //dynamic netObj = JsonConvert.DeserializeObject(json);
-            //string imageURL = netObj.icon;
-            //Console.WriteLine(imageURL);
-            //var request = WebRequest.Create(imageURL);
-            //for (int i = 1; i < 47; i++)
-            //{
-            //    if (i != 8 && i != 17 && i != 21)
-            //    {
-            //        json = new WebClient().DownloadString(API_URL + "/currencies/" + i);
-            //        netObj = JsonConvert.DeserializeObject(json);
-            //        Console.WriteLine(i.ToString() + " " + netObj.name);
-            //    }
-            //}
         }
 
         private void FetchAccountInfo()
@@ -56,12 +37,14 @@ namespace Goal_Wars
 
             for (int i = 0; i < currencyCounter.Length; i++)
             {
-                MessageBox.Show("About to assign:" + netObj[currencyID[i] + CURRENCY_OFFSET].value.ToString());
-
-                currencyCount[i] = netObj[currencyID[i] + CURRENCY_OFFSET].value;
-                MessageBox.Show("currencyCount[" + i + "] successfully assigned as: " + currencyCount[i].ToString());
-                string test = netObj[currencyID[i] + CURRENCY_OFFSET].value.ToString();
-                currencyCounter[i].Text = test;
+                for (int j = 0; j < netObj.Count; j++)
+                {
+                    if (netObj[j].id == currencyID[i])
+                    {
+                        currencyCount[i] = netObj[j].value;
+                        currencyCounter[i].Text = currencyCount[i].ToString();
+                    }
+                }
             }
 
             DisplayProgress();
@@ -112,6 +95,13 @@ namespace Goal_Wars
 
         private void DisplayProgress()
         {
+            ProgressBar[] currencyProgress = { prgCurrency1, prgCurrency2, prgCurrency3, prgCurrency4, prgCurrency5, prgCurrency6 };
+
+            for (int i = 0; i < currencyProgress.Length; i++)
+            {
+                currencyProgress[i].Maximum = currencyCount[i] + 100;
+            }
+
             tmrCounter.Start();
         }
 
@@ -121,10 +111,6 @@ namespace Goal_Wars
 
             for (int i = 0; i < currencyProgress.Length; i++)
             {
-               
-
-                currencyProgress[i].Maximum = 13000;
-
                 if (currencyProgress[i].Value >= currencyCount[i]) { }
                 else if (currencyProgress[i].Value + 17 > currencyCount[i])
                 {
