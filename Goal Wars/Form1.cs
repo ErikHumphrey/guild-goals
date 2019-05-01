@@ -16,11 +16,10 @@ namespace Goal_Wars
 {
     public partial class frmMain : Form
     {
-        int count = 0;
-        int fakeCount = 0;
         const string API_URL = "https://api.guildwars2.com/v2";
         const int CURRENCY_OFFSET = -4; // TODO: Find why this is necessary
         string apiKey;
+        int[] currencyCount = new int[6];
 
         public frmMain()
         {
@@ -53,13 +52,19 @@ namespace Goal_Wars
             dynamic netObj = JsonConvert.DeserializeObject(request);
 
             Label[] currencyCounter = { lblCurrencyCount1, lblCurrencyCount2, lblCurrencyCount3, lblCurrencyCount4, lblCurrencyCount5, lblCurrencyCount6 };
-            ProgressBar[] currencyProgress = { prgCurrency1, prgCurrency2, prgCurrency3, prgCurrency4, prgCurrency5, prgCurrency6 };
             int[] currencyID = { 27, 25, 5, 6, 19, 16 }; // TODO: Remove duplication
 
             for (int i = 0; i < currencyCounter.Length; i++)
             {
-                currencyCounter[i].Text = netObj[currencyID[i] + CURRENCY_OFFSET].value;
+                MessageBox.Show("About to assign:" + netObj[currencyID[i] + CURRENCY_OFFSET].value.ToString());
+
+                currencyCount[i] = netObj[currencyID[i] + CURRENCY_OFFSET].value;
+                MessageBox.Show("currencyCount[" + i + "] successfully assigned as: " + currencyCount[i].ToString());
+                string test = netObj[currencyID[i] + CURRENCY_OFFSET].value.ToString();
+                currencyCounter[i].Text = test;
             }
+
+            DisplayProgress();
         }
 
         private void FetchIcons()
@@ -102,25 +107,38 @@ namespace Goal_Wars
 
         private void TmrCounter_Tick(object sender, EventArgs e)
         {
-            if (fakeCount >= count) { }
-            else if (fakeCount + 17 > count)
-            {
-                fakeCount += 1;
-            }
-            else if (fakeCount + 500 > count)
-            {
-                fakeCount += 7;
-            }
-            else
-            {
-                fakeCount += 17;
-            }
+            Tick();
+        }
 
-            lblCurrencyCount1.Text = fakeCount.ToString();
-            prgCurrency1.Value = fakeCount;
+        private void DisplayProgress()
+        {
+            tmrCounter.Start();
+        }
 
-            if (fakeCount >= count)
-                tmrCounter.Stop();
+        private void Tick()
+        {
+            ProgressBar[] currencyProgress = { prgCurrency1, prgCurrency2, prgCurrency3, prgCurrency4, prgCurrency5, prgCurrency6 };
+
+            for (int i = 0; i < currencyProgress.Length; i++)
+            {
+               
+
+                currencyProgress[i].Maximum = 13000;
+
+                if (currencyProgress[i].Value >= currencyCount[i]) { }
+                else if (currencyProgress[i].Value + 17 > currencyCount[i])
+                {
+                    currencyProgress[i].Value += 1;
+                }
+                else if (currencyProgress[i].Value + 500 > currencyCount[i])
+                {
+                    currencyProgress[i].Value += 7;
+                }
+                else
+                {
+                    currencyProgress[i].Value += 17;
+                }
+            }
         }
     }
 }
