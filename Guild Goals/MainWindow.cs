@@ -110,6 +110,7 @@ namespace Guild_Goals
         private void Tick()
         {
             ProgressBar[] currencyProgress = { prgCurrency1, prgCurrency2, prgCurrency3, prgCurrency4, prgCurrency5, prgCurrency6 };
+            Label[] currencyCounter = { lblCurrencyCount1, lblCurrencyCount2, lblCurrencyCount3, lblCurrencyCount4, lblCurrencyCount5, lblCurrencyCount6 };
 
             for (int i = 0; i < currencyProgress.Length; i++)
             {
@@ -126,6 +127,8 @@ namespace Guild_Goals
                 {
                     currencyProgress[i].Value += 17;
                 }
+
+                currencyCounter[i].Text = currencyProgress[i].Value + " / " + currencyProgress[i].Maximum;
             }
         }
 
