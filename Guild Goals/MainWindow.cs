@@ -75,10 +75,7 @@ namespace Guild_Goals
             }
         }
 
-        private void BtnRefresh_Click(object sender, EventArgs e)
-        {
-            FetchAccountInfo();
-        }
+        private void BtnRefresh_Click(object sender, EventArgs e) => FetchAccountInfo();
 
         private void TxtApiKey_TextChanged(object sender, EventArgs e)
         {
@@ -90,10 +87,9 @@ namespace Guild_Goals
             }
         }
 
-        private void TmrCounter_Tick(object sender, EventArgs e)
-        {
-            Tick();
-        }
+        private void TxtApiKey_Focus(Object sender, EventArgs e) => txtApiKey.Text = ""; // Clear TextBox on focus
+
+        private void TmrCounter_Tick(object sender, EventArgs e) => Tick();
 
         private void DisplayProgress()
         {
@@ -130,11 +126,6 @@ namespace Guild_Goals
 
                 currencyCounter[i].Text = currencyProgress[i].Value + " / " + currencyProgress[i].Maximum;
             }
-        }
-
-        private void TxtApiKey_Focus(Object sender, EventArgs e)
-        {
-            txtApiKey.Text = ""; // Clear TextBox on focus
         }
     }
 }
