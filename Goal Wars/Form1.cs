@@ -30,22 +30,22 @@ namespace Goal_Wars
         private void FrmMain_Load(object sender, EventArgs e)
         {
             string json = new WebClient().DownloadString(API_URL + "/currencies/25");
-            dynamic stuff = JsonConvert.DeserializeObject(json);
-            string imageURL = stuff.icon;
+            dynamic netObj = JsonConvert.DeserializeObject(json);
+            string imageURL = netObj.icon;
             Console.WriteLine(imageURL);
             var request = WebRequest.Create(imageURL);
 
             FetchIcons();
 
-            lblCurrencyName1.Text = stuff.name + "s";
+            lblCurrencyName1.Text = netObj.name + "s";
 
             for (int i = 1; i < 47; i++)
             {
                 if (i != 8 && i != 17 && i != 21)
                 {
                     json = new WebClient().DownloadString(API_URL + "/currencies/" + i);
-                    stuff = JsonConvert.DeserializeObject(json);
-                    Console.WriteLine(i.ToString() + " " + stuff.name);
+                    netObj = JsonConvert.DeserializeObject(json);
+                    Console.WriteLine(i.ToString() + " " + netObj.name);
                 }
             }
         }
@@ -53,20 +53,22 @@ namespace Goal_Wars
         private void FetchAccountInfo()
         {
             String request = new WebClient().DownloadString(API_URL + "/account/wallet" + "?access_token=" + apiKey);
-            dynamic stuff = JsonConvert.DeserializeObject(request);
+            dynamic netObj = JsonConvert.DeserializeObject(request);
 
-            Label[] currencyName = { lblCurrencyName1, lblCurrencyName2, lblCurrencyName3, lblCurrencyName4, lblCurrencyName5, lblCurrencyName6 };
             Label[] currencyCounter = { lblCurrencyCount1, lblCurrencyCount2, lblCurrencyCount3, lblCurrencyCount4, lblCurrencyCount5, lblCurrencyCount6 };
             ProgressBar[] currencyProgress = { prgCurrency1, prgCurrency2, prgCurrency3, prgCurrency4, prgCurrency5, prgCurrency6 };
+            int[] currencyID = { 27, 25, 5, 6, 19, 16 }; // TODO: Remove duplication
 
-            count = stuff[21].value;
-            prgCurrency1.Maximum = count + 500;
-            tmrCounter.Start();
+            for (int i = 0; i < currencyCounter.Length; i++)
+            {
+                currencyCounter[i].Text = netObj[currencyID[i - 4]].value;
+            }
         }
 
         private void FetchIcons()
         {
             PictureBox[] currencyIcon = { pboCurrencyIcon1, pboCurrencyIcon2, pboCurrencyIcon3, pboCurrencyIcon4, pboCurrencyIcon5, pboCurrencyIcon6 };
+            Label[] currencyName = { lblCurrencyName1, lblCurrencyName2, lblCurrencyName3, lblCurrencyName4, lblCurrencyName5, lblCurrencyName6 };
             int[] currencyID = { 27, 25, 5, 6, 19, 16 };
 
             for (int i = 0; i < currencyIcon.Length; i++)
@@ -81,6 +83,8 @@ namespace Goal_Wars
                 {
                     currencyIcon[i].Image = Bitmap.FromStream(stream);
                 }
+
+                currencyName[i].Text = netObj.name;
             }
         }
 
