@@ -61,7 +61,7 @@ namespace Goal_Wars
 
             for (int i = 0; i < currencyCounter.Length; i++)
             {
-                currencyCounter[i].Text = netObj[currencyID[i - 4]].value;
+                currencyCounter[i].Text = netObj[currencyID[i] + CURRENCY_OFFSET].value;
             }
         }
 
