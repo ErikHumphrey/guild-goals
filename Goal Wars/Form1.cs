@@ -58,7 +58,7 @@ namespace Goal_Wars
             tmrCounter.Start();
         }
 
-        private void fetchIcons()
+        private void FetchIcons()
         {
             PictureBox[] pbo = { pboCurrencyIcon1, pboCurrencyIcon2, pboCurrencyIcon3, pboCurrencyIcon4, pboCurrencyIcon5, pboCurrencyIcon6 };
             int[] currencyID = { 27, 25, 5, 6, 19, 16 };
